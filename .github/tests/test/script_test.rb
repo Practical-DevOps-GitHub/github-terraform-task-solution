@@ -105,7 +105,7 @@ class ScriptTest < Test::Unit::TestCase
     puts '#########'
     puts rulesets_require_code_owner_review
     puts '#########'
-    assert_not_nil(classic_require_code_owner_review, "We should not allow merge to main branch without approve from #{user_name}")
+    assert_not_nil(classic_require_code_owner_review || rulesets_require_code_owner_review, "We should not allow merge to main branch without approve from #{user_name}")
   end
 
   def test_PR_template_present
