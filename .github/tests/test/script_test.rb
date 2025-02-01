@@ -104,6 +104,7 @@ class ScriptTest < Test::Unit::TestCase
     rulesets_require_code_owner_review = pull_request_rulesets_rules&.find { |rule| rule['type'] == 'pull_request' }&.[]('parameters')&.[]('require_code_owner_review')
     puts '#########'
     puts rulesets_require_code_owner_review
+    puts '#########'
     assert_not_nil(classic_require_code_owner_review, "We should not allow merge to main branch without approve from #{user_name}")
   end
 
